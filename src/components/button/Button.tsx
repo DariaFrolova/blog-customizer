@@ -1,21 +1,82 @@
-import { Text } from 'components/text';
 
+// import { Text } from 'components/text';
+
+// import styles from './Button.module.scss';
+
+// export const Button = ({
+// 	title,
+// 	onClick,
+// 	type,
+// }: {
+// 	title: string;
+// 	onClick?: () => void;
+// 	type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
+// }) => {
+// 	return (
+// 		<button className={styles.button} type={type} onClick={onClick}>
+// 			<Text weight={800} uppercase>
+// 				{title}
+// 			</Text>
+// 		</button>
+// 	);
+// };
+
+
+// import React from 'react';
+
+// import { Text } from 'components/text';
+
+// import styles from './Button.module.scss';
+
+// interface ButtonProps {
+//   title: string;
+//   onClick?: () => void;
+//   type?: "submit" | "reset" | "button" | undefined;
+//   className?: string;
+// }
+
+// export const Button: React.FC<ButtonProps> = ({
+//   title,
+//   onClick,
+//   type,
+//   className
+// }) => {
+//   return (
+//     <button className={`${styles.button} ${className}} type={type} onClick={onClick`}>
+//       <Text weight={800} uppercase>
+//         {title}
+//       </Text>
+//     </button>
+//   );
+// };
+
+
+import React from 'react';
+import { Text } from 'components/text';
 import styles from './Button.module.scss';
 
-export const Button = ({
-	title,
-	onClick,
-	type,
-}: {
-	title: string;
-	onClick?: () => void;
-	type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
+interface ButtonProps {
+  title: string;
+  onClick?: () => void;
+  type?: "submit" | "reset" | "button" | undefined;
+//   variant?: "primary" | "secondary";
+variant: "submit" | "reset";
+}
+
+export const Button: React.FC<ButtonProps> = ({
+  title,
+  onClick,
+  type,
+  variant 
 }) => {
-	return (
-		<button className={styles.button} type={type} onClick={onClick}>
-			<Text weight={800} uppercase>
-				{title}
-			</Text>
-		</button>
-	);
+	const buttonClass = `${styles.button} ${styles[variant]}`;
+//   const buttonClass = `${styles.button} ${styles[variant]}`;
+
+  return (
+    <button className={buttonClass} type={type} onClick={onClick}>
+      <Text weight={800} uppercase>
+        {title}
+      </Text>
+    </button>
+  );
 };

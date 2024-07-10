@@ -1,3 +1,5 @@
+//работает тут
+
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { ArrowButton } from './ArrowButton';
@@ -13,7 +15,9 @@ export const ArrowButtonStory: Story = {
 	render: () => {
 		return (
 			<>
-				<ArrowButton />
+				<ArrowButton onClick={function (): void {
+					throw new Error('Function not implemented.');
+				} } isOpen={false} />
 			</>
 		);
 	},

@@ -1,3 +1,5 @@
+//работает тут
+
 .container {
 	position: fixed;
 	top: 31px;
@@ -9,18 +11,20 @@
 	width: 100px;
 	height: 100px;
 	background-color: #000000;
-	border-right: 1px;
+	// border-right: 1px; // было в базовом коде, не используется
 	transition: transform 0.5s ease;
+	outline: none;
+	cursor: pointer; 
+	border: none; // без этого свойства почему-то появляется черная обводка 
 }
 
-
-.container:hover {
-  background-color: #FFC802;
-  outline: none; 
+.container:hover,
+.container:focus-visible {
+	background-color: #ffc802;
 }
 
-.container_open {
-	transform: translate(616px);
+.container:active {
+	background-color: #787878;
 }
 
 .arrow {
@@ -29,6 +33,10 @@
 	height: 48px;
 	transform: rotate(180deg);
 	transition: transform 0.5s ease;
+}
+
+.container_open {
+	transform: translate(616px, 0); //добавили значение для второй оси
 }
 
 .arrow_open {
