@@ -5,7 +5,6 @@ import styles from './Button.module.scss';
 interface ButtonProps {
 	title: string;
 	onClick?: () => void;
-	// onClick?: (e: any) => void;
 	type?: 'submit' | 'reset' | 'button' | undefined;
 	variant: 'submit' | 'reset';
 }
