@@ -1,5 +1,3 @@
-//работает тут
-
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { ArrowButton } from './ArrowButton';
