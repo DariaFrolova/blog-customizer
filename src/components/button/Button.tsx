@@ -1,18 +1,24 @@
+import React from 'react';
 import { Text } from 'components/text';
-
 import styles from './Button.module.scss';
 
-export const Button = ({
+interface ButtonProps {
+	title: string;
+	onClick?: () => void;
+	type?: 'submit' | 'reset' | 'button' | undefined;
+	variant: 'submit' | 'reset';
+}
+
+export const Button: React.FC<ButtonProps> = ({
 	title,
 	onClick,
 	type,
-}: {
-	title: string;
-	onClick?: () => void;
-	type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
+	variant,
 }) => {
+	const buttonClass = `${styles.button} ${styles[variant]}`;
+
 	return (
-		<button className={styles.button} type={type} onClick={onClick}>
+		<button className={buttonClass} type={type} onClick={onClick}>
 			<Text weight={800} uppercase>
 				{title}
 			</Text>

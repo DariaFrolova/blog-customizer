@@ -8,12 +8,35 @@
 	text-align: center;
 	border: 1px solid #000000;
 	cursor: pointer;
+
+	&.submit {
+		background-color: #FFC802;
+		color: #000000;
+	
+		&:hover {
+		  background-color: #FFEDAB;
+		  color: #000000; 
+		}
+	
+		&:active {
+		  background-color: #FFEDAB;
+		}
+	  }
+
+	&.reset {
+		background-color: #ffffff;
+		color: #000000;
+ 
+		&:hover {
+			background-color: #000000;
+			color: #ffffff;  /* изменение цвета текста при наведении на красный */
+		}
+ 
+		&:active {
+			background-color: #000000;
+			color: #ffffff; /* изменение цвета текста при нажатии на белый */
+		}
+	}
 }
 
-.button:active {
-	background: var(--gold, #ffc802);
-}
-
-.button:hover {
-	background: var(--gold, #ffc802);
-}
+// остановились здесь не удается никак сделать при наведении кнопку с белым текстом

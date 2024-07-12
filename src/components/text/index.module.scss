@@ -1,5 +1,5 @@
 @mixin typography($size: 18, $weight: 400, $family: 'Open Sans') {
-	color: #000000;
+	// color: #000000; // убрано для настройки цвета текста кнопки
 	font-weight: $weight;
 	font-size: $size;
 	font-family: $family;

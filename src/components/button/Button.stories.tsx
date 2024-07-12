@@ -7,6 +7,7 @@ const meta: Meta<typeof Button> = {
 };
 
 export default meta;
+
 type Story = StoryObj<typeof Button>;
 
 export const ButtonStory: Story = {
@@ -16,11 +17,13 @@ export const ButtonStory: Story = {
 				<Button
 					title='Сбросить'
 					type='reset'
+					variant='reset' 
 					onClick={() => alert('клик на кнопку сбросить')}
 				/>
 				<Button
 					title='Применить'
 					type='submit'
+					variant='submit' 
 					onClick={() => alert('клик на кнопку применить')}
 				/>
 			</>
